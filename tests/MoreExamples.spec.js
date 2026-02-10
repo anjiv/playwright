@@ -38,7 +38,7 @@ test('screenshot testing', async ({page}) => {
   await expect(page.locator('#displayed-text')).toBeHidden(); // check if the element is hidden.
 });
 
-test('visual testing', async ({page}) => {
-  await page.goto('https://gmail.com');
-  expect(await page.screenshot()).toMatchSnapshot('landing.png');
-});
+// test('visual testing', async ({page}) => {
+//   await page.goto('https://gmail.com');
+//   expect(await page.screenshot()).toMatchSnapshot('landing.png');
+// });

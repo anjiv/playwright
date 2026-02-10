@@ -13,12 +13,12 @@ export default defineConfig({
   expect: {
     timeout: 5000, // timeout for each expect statement
   },
-  // reporter: ['html'],
-  reporter: [
-    ['line'], // Optional: Keeps the default line output in the terminal
-    ['allure-playwright', {
-    resultsDir: 'allure-results', // Optional: Specifies where results will be saved
-  }]],
+  reporter: [['html']],
+  // reporter: [
+  //   ['line'], // Optional: Keeps the default line output in the terminal
+  //   ['allure-playwright', {
+  //   resultsDir: 'allure-results', // Optional: Specifies where results will be saved
+  // }]],
   // projects is used to run the tests on multiple browsers.
   projects: [
     {

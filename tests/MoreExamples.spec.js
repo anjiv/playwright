@@ -17,13 +17,13 @@ test('playwright more examples', async ({page}) => {
   await page.locator('#hide-textbox').click();
   await expect(page.locator('#displayed-text')).toBeHidden(); // check if the element is hidden.
 
-  await page.pause(); // pause the execution of the test.
+  // await page.pause(); // pause the execution of the test.
   await page.on('dialog', dialog => dialog.accept()); // accept the dialog.
   await page.locator('#confirmbtn').click();
   await page.locator('#mousehover').hover(); // hover over the element.
 
   const frame = await page.frameLocator('#courses-iframe'); // switch to the iframe.
-  await frame.locator('a[href*="lifetime-access"]:visible').click(); // click on the element.
+  await frame.locator("li a[href*='lifetime-access']:visible").click(); // click on the element.
   const text = await frame.locator('.text h2').textContent(); // get the text content of the element.
   console.log(text.split(' ')[1]); // print the second word of the text.
 });

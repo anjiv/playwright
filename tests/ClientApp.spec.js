@@ -14,7 +14,7 @@ test('playwright task client app', async ({page}) => {
   await page.waitForLoadState('networkidle'); // wait for the network to be idle so that line 18 is not required.
 
   // If line 14 doesn't work then we can use this.
-  // await page.locator('.card-body b').first().waitFor();
+  await page.locator('.card-body b').first().waitFor();
 
   // Load the content of the product name
   const titles = await page.locator('.card-body b').allTextContents();
@@ -31,7 +31,7 @@ test('playwright task client app', async ({page}) => {
     }
   }
 
-  await page.locator('[routerlink*="cart"]').click();
+  await page.locator("[routerlink*='cart']").click();
   await page.locator('.cartWrap li').first().waitFor();
   const bool =await page.locator('h3:has-text("ADIDAS ORIGINAL")').isVisible();
   await expect(bool).toBeTruthy();
